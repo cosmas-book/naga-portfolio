@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Research{% endblock %}
+
+{% block content %}
+<!-- Research Section -->
+<section id="research" class="container mx-auto p-4 md:p-6">
+    <div class="text-center mb-4 md:mb-6">
+        <h2 class="text-3xl md:text-5xl p-2 mb-2 underline decoration-sky-500">Research</h2>
+        <p class="text-gray-500 text-sm md:text-base">Highlighting my research interests, patents, and publications</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-5 gap-4">
+        <!-- Research Interest -->
+        <div class="row-span-2 border border-gray-700 p-4">
+            <h3 class="text-2xl md:text-3xl p-2 mb-2 underline decoration-sky-500">Research Interest</h3>
+            <ul class="text-sm md:text-base">
+                <li class="mb-3"><strong>Heat Transfer Enhancement</strong></li>
+                <li class="mb-3"><strong>Microstructure Study of Al-Mg Based Alloys</strong></li>
+                <li class="mb-3"><strong>Minimization of Casting Defects in Al, Fe Based Material</strong></li>
+                <li class="mb-3"><strong>Die Improvement</strong></li>
+                <li class="mb-3"><strong>Flow Analysis Techniques</strong></li>
+                <li><strong>Optimization Techniques</strong></li>
+            </ul>
+        </div>
+
+        <!-- International/National Conference Papers -->
+        <div class="col-span-3 row-span-2 border border-gray-700 p-4">
+            <h3 class="text-2xl md:text-3xl p-2 mb-2 underline decoration-sky-500">International/National Conference Papers</h3>
+            <ul class="text-sm md:text-base">
+                <li class="mb-3"><strong>Effect of Fly Ash on Mechanical Properties of Compacted Magnesium Reinforced with Sic Particles</strong> - Presented at <i>Sairam Engineering College</i></li>
+                <li class="mb-3"><strong>Design and Fabrication of Fatigue Test Rig and Preliminary Investigation on Flax Composite Beam</strong> - Presented at <i>VIT-Vellore</i></li>
+                <li class="mb-3"><strong>Modeling and Analysis of Tribological Evaluation of Hydrodynamic Journal Bearing Lubricated Under Influence Using D-Optimal Design</strong> - Presented at <i>VIT-Vellore</i></li>
+                <li class="mb-3"><strong>Optimization of Porosity and Cold Shut Formation in Alsi5Cu3 Pressure Die Casting Using Taguchi Method</strong> - Presented at <i>S.A Engineering College</i></li>
+            </ul>
+        </div>
+
+        <!-- Research Papers Published Identification Details -->
+        <div class="row-span-2 border border-gray-700 p-4">
+            <h3 class="text-2xl md:text-3xl p-2 mb-2 underline decoration-sky-500">Research Papers Published Identification Details</h3>
+            <div>
+                <ul class="text-sm md:text-base">
+                    <li class="mb-3"><strong>ORCID ID:</strong> <a class="underline decoration-indigo-500" href="https://orcid.org/0000-0002-5889-518" target="_blank">https://orcid.org/0000-0002-5889-518</a></li>
+                    <li class="mb-3"><strong>Scopus ID:</strong> 57202996825</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Books Published -->
+        <div class="col-span-3 border border-gray-700 p-4">
+            <h3 class="text-2xl md:text-3xl p-2 mb-2 underline decoration-sky-500">Books Published</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Book Item -->
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Advanced Materials And Technologies</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+                <!-- Repeat Books -->
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Advancement Material Testing And Characterization</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Forces In Structures In Transmission Of Power</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Rapid Prototyping And Its Applications</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Wind Power Generation And Wind Turbine</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+                <div class="border border-gray-700">
+                    <div class="p-4">
+                        <h4 class="text-xl md:text-2xl">Artificial And Machine Learning Applications</h4>
+                        <p class="text-gray-500 text-sm md:text-base">Cosmas Scientific Publications, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Patents/Copyrights -->
+        <div class="col-span-2 border border-gray-700 p-4">
+            <h3 class="text-2xl md:text-3xl p-2 mb-2 underline decoration-sky-500">Research Patents/Copyrights</h3>
+            <div class="mb-2">
+                <h4 class="text-xl md:text-2xl underline decoration-double decoration-gray-500">Indian Utility Patents</h4>
+                <ul class="text-sm md:text-base">
+                    {% for data in research %}
+                    {% if data.category == 'IU' %}
+                    <li class="mb-3"><strong>{{ data.title }}</strong> (Granted: {{ data.granted_on }}). <a class="text-blue-600 dark:text-sky-400" target="_blank" href="{{ data.link }}">(View)</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <h4 class="text-xl md:text-2xl underline decoration-double decoration-gray-500">Indian Design Patents</h4>
+                <ul class="text-sm md:text-base">
+                    {% for data in research %}
+                    {% if data.category == 'ID' %}
+                    <li class="mb-3"><strong>{{ data.title }}</strong> (Granted: {{ data.granted_on }}). <a class="text-blue-600 dark:text-sky-400" target="_blank" href="{{ data.link }}">(View)</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <h4 class="text-xl md:text-2xl underline decoration-double decoration-gray-500">Foreign Design Patents</h4>
+                <ul class="text-sm md:text-base">
+                    <li class="mb-3"><strong>Construction Site Monitoring System Based on IoT and Blockchain</strong> (Granted: March 2022, Germany)</li>
+                    <li class="mb-3"><strong>Automated Headlight Intensity Controller for Bike</strong> (Granted: April 2023, UK)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

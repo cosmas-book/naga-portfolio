@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% block title %} {{ profile.name }} {% endblock %}
+{% block content %}
+
+<section class="home container mx-auto p-4 md:p-6">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+    <!-- Profile Picture -->
+    <div class="row-span-2 md:row-span-3 border border-gray-700">
+      <img src="{{ profile.profile_picture.url }}" alt="{{ profile.name }}" 
+           class="w-full h-auto object-cover">
+    </div>
+
+    <!-- Profile Details -->
+    <div class="col-span-3 row-span-2 border border-gray-700 p-4 md:p-6">
+      <div class="profile-details text-center">
+        <h1 class="profile-name text-4xl md:text-6xl">{{ profile.name }}</h1>
+        <h2 class="profile-role text-2xl md:text-4xl mt-2">Associate Professor</h2>
+        <p class="profile-title text-lg md:text-xl mt-4">
+          FOUNDER & CEO, <br>
+          <a href="https://cirtech.in/" class="no-underline hover:underline decoration-sky-500" target="_blank">
+            COSMAS INSTITUTE OF RESEARCH AND TECHNOLOGY
+          </a>
+        </p>
+        <p class="text-gray-400 text-sm md:text-base mt-2">(Approved by Govt. of India & Ministry of Corporate Affairs, MSME, & Dept. Higher Education - MHRD)</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links mt-6">
+        <ul class="wrapper flex justify-center space-x-4 md:space-x-6">
+          <li class="icon linkedin">
+            <span class="tooltip  md:inline">LinkedIn</span>
+            <a href="{{ profile.linkedin_url }}" target="_blank" title="LinkedIn" class="social-icon text-2xl md:text-3xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li class="icon facebook">
+            <span class="tooltip  md:inline">Facebook</span>
+
+            <a href="{{ profile.facebook_url }}" target="_blank" title="Facebook" class="social-icon text-2xl md:text-3xl"><i
+                class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="icon twitter">
+            <span class="tooltip  md:inline">Twitter</span>
+
+            <a href="{{ profile.x_url }}" target="_blank" title="X" class="social-icon text-2xl md:text-3xl"><i
+                class="fab fa-twitter"></i></a>
+          </li>
+          <li class="icon instagram">
+            <span class="tooltip  md:inline">Instagram</span>
+
+            <a href="{{ profile.instagram_url }}" target="_blank" title="Instagram" class="social-icon text-2xl md:text-3xl"><i
+                class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Personal Info -->
+    <div class="row-span-2 border border-gray-700 p-4">
+      <div class="info">
+        <h3 class="text-2xl md:text-3xl text-center p-4 underline decoration-sky-500">Personal Details</h3>
+        <ul class="text-sm md:text-base">
+          <li><strong>DOB:</strong> July 18th, 1989</li>
+          <li><strong>Marital:</strong> Married</li>
+          <li><strong>Nationality:</strong> Indian</li>
+          <li><strong>Phone:</strong> (+91) 9566299886 / 9444932734</li>
+          <li><strong>Email:</strong> <a href="mailto:{{ profile.email }}" class="break-all">Sainaga90@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="col-span-3 row-span-2 border border-gray-700 p-4">
+      <h3 class="text-2xl md:text-3xl text-center p-4 underline decoration-sky-500">About Me</h3>
+      <div class="about p-4 text-sm md:text-base">
+        <p>
+          Dr. N. Nagabhooshanam, an accomplished academic and researcher, holds a Ph.D. in Mechanical Engineering with
+          expertise in interfacial heat transfer in die-casting processes. He currently serves as an Associate Professor
+          in
+          the Department of Mechanical Engineering at Aditya Engineering College, India.
+        </p>
+        <br>
+        <p>
+          With over a decade of teaching and research experience, his work spans diverse fields, including fluid
+          mechanics,
+          material sciences, and advanced manufacturing. He holds several patents for AI-powered devices, renewable
+          energy
+          solutions, and advanced composites.
+        </p>
+        <br>
+        <p>
+          He is the Founder and CEO of the <a class="underline decoration-double decoration-blue-500 "
+            href="https://cirtech.in/" target="_blank">Cosmas Institute of Research and Technology</a> , focusing on
+          fostering innovation
+          and
+          education.
+        </p>
+        <!-- Rest of the content -->
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="col-span-3 row-span-2 border border-gray-700 p-4">
+      <h2 class="text-2xl md:text-3xl text-center p-4 underline decoration-sky-500">Education</h2>
+      <div class="education grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Education Cards -->
+        <div class="max-w-sm p-4 md:p-6 bg-white border border-gray-500 rounded-lg shadow-sm">
+          <div class="img">
+            <img class="rounded-t-lg w-full h-48 object-cover"
+              src="https://images.indianexpress.com/2024/07/anna-uni.jpg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-900">Ph.D. in Manufacturer Engineering / Foundry Technology</h5>
+            <ul class="text-gray-500 text-sm md:text-base">
+              <li>Anna University, Chennai</li>
+              <li>Graduation Year: <strong>2022</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="max-w-sm p-4 md:p-6 bg-white border border-gray-500 rounded-lg shadow-sm">
+          <div class="img">
+            <img class="rounded-t-lg w-full h-48 object-cover"
+              src="https://images.indianexpress.com/2024/07/anna-uni.jpg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-900">Master of Technology (M.Tech) in CAD/CAM</h5>
+            <ul class="text-gray-500 text-sm md:text-base">
+              <li>Anna University, Chennai</li>
+              <li>Graduation Year: <strong>2015</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="max-w-sm p-4 md:p-6 bg-white border border-gray-500 rounded-lg shadow-sm">
+          <div class="img">
+            <img class="rounded-t-lg w-full h-48 object-cover"
+              src="https://images.indianexpress.com/2024/07/anna-uni.jpg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-xl md:text-2xl font-bold tracking-tight text-gray-900">Bachelor of Engineering (B.E) in Production Engineering</h5>
+            <ul class="text-gray-500 text-sm md:text-base">
+              <li>Anna University, Chennai</li>
+              <li>Graduation Year: <strong>2007</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+{% endblock content %}

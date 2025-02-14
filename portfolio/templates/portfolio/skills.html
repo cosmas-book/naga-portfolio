@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+
+<style>
+    /* Include the updated CSS here */
+    .skill-badge {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        color: white;
+        background-color: #3b82f6; /* Blue color */
+        border-radius: 9999px;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .skill-badge::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(45deg);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .skill-badge:hover::before {
+        left: 100%;
+        top: 100%;
+        animation: shine 1s ease-in-out;
+    }
+
+    .skill-badge:hover {
+        background-color: #2563eb; /* Darker blue color */
+    }
+
+    @keyframes shine {
+        0% {
+            left: -100%;
+            top: -100%;
+        }
+        50% {
+            left: 50%;
+            top: 50%;
+        }
+        100% {
+            left: 100%;
+            top: 100%;
+        }
+    }
+</style>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container ">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-5xl underline decoration-sky-500">Skills</h2>
+            <p class="text-gray-500">A blend of technical expertise and interpersonal abilities</p>
+        </div>
+
+        <div class="container mx-auto p-6 ">
+            <h1 class="text-4xl font-bold mb-6 text-center underline decoration-sky-500">Technical Skills</h1>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="skill-badge">Mechanical Engineering</span>
+                <span class="skill-badge">Fluid Mechanics</span>
+                <span class="skill-badge">Manufacturing Process & Material Sciences</span>
+                <span class="skill-badge">Heat Transfer & Die-Casting</span>
+                <span class="skill-badge">CAD/CAM</span>
+                <span class="skill-badge">Finite Element Analysis (FEA)</span>
+                <span class="skill-badge">Optimization Techniques</span>
+                <span class="skill-badge">AI & Machine Learning in Engineering</span>
+                <span class="skill-badge">Renewable Energy Systems</span>
+                <span class="skill-badge">Patent Development & Innovation</span>
+            </div>
+    
+            <h1 class="text-4xl font-bold mt-12 mb-6 text-center underline decoration-sky-500">Soft Skills</h1>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="skill-badge">Leadership & Mentoring</span>
+                <span class="skill-badge">Communication & Presentation</span>
+                <span class="skill-badge">Problem Solving & Critical Thinking</span>
+                <span class="skill-badge">Research & Development</span>
+                <span class="skill-badge">Team Collaboration</span>
+                <span class="skill-badge">Time Management</span>
+                <span class="skill-badge">Technical Writing & Documentation</span>
+                <span class="skill-badge">Curriculum Development & Teaching</span>
+            </div>
+        </div>
+        
+
+
+    </div>
+</section>
+
+
+
+{% endblock content %}
